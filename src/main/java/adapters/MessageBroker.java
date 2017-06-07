@@ -28,7 +28,7 @@ public class MessageBroker implements OutputService {
     }
 
     @Override
-    public void putMessage(MessageDTO messageDTO) throws MessageException {
+    public void putMessage(MessageDTO messageDTO) throws CommunicationException {
         try {
             ConnectionFactory factory = new ConnectionFactory();
             factory.setUri(uri);
@@ -45,17 +45,17 @@ public class MessageBroker implements OutputService {
             channel.basicPublish("", queueName, null, xmlString.getBytes());
             logger.info("Sent message to the RabbitMQ queue: " + queueName);
         } catch (Exception e){
-            throw new MessageException("Error during placing message on the queue", e);
+            throw new CommunicationException("Error during placing message on the queue", e);
         }
     }
 
     @Override
-    public void shutdown() throws MessageException{
+    public void shutdown() throws CommunicationException {
         try {
             channel.close();
             connection.close();
         } catch (TimeoutException | IOException e) {
-            throw new MessageException("Unable to close connection to RabbitMQ, e");
+            throw new CommunicationException("Unable to close connection to RabbitMQ, e");
         }
     }
 

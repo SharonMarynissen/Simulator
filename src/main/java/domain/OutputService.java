@@ -4,6 +4,16 @@ package domain;
  * Service for sending a {@link MessageDTO}
  */
 public interface OutputService {
-    void putMessage(MessageDTO messageDTO) throws MessageException;
-    void shutdown() throws MessageException;
+    /**
+     * Method to send the message to the output service
+     * @param messageDTO needed to be send
+     * @throws CommunicationException when something went wrong during sending sending
+     */
+    void putMessage(MessageDTO messageDTO) throws CommunicationException;
+
+    /**
+     * Closing the connection with the output service
+     * @throws CommunicationException when something went wrong during closing the connection with the output service
+     */
+    void shutdown() throws CommunicationException;
 }

@@ -21,7 +21,7 @@ public class Generator implements InputService {
     private Traffic traffic = new Traffic();
 
     @Override
-    public void initialize(InputListener listener) throws MessageException {
+    public void initialize(InputListener listener) throws CommunicationException {
         do {
             if (listener != null) {
                 try {

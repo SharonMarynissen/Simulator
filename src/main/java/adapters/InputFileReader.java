@@ -21,7 +21,7 @@ public class InputFileReader implements InputService {
     }
 
     @Override
-    public void initialize(InputListener listener) throws MessageException {
+    public void initialize(InputListener listener) throws CommunicationException {
         if (listener != null) {
             try {
                 logger.info("Using path '" + path + "'");

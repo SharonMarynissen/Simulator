@@ -3,12 +3,12 @@ package domain;
 /**
  * Exception that is thrown when something went wrong during sending camera messages
  */
-public class MessageException extends Exception {
-    public MessageException(String message) {
+public class CommunicationException extends Exception {
+    public CommunicationException(String message) {
         super(message);
     }
 
-    public MessageException(String message, Throwable cause) {
+    public CommunicationException(String message, Throwable cause) {
         super(message, cause);
     }
 }

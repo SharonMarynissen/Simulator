@@ -18,7 +18,7 @@ public class Manager implements InputListener {
     public void start() {
         try {
             inputService.initialize(this);
-        } catch (MessageException e) {
+        } catch (CommunicationException e) {
             logger.fatal("Unable to initialize camera message generator", e);
         }
     }
@@ -30,7 +30,7 @@ public class Manager implements InputListener {
         if(outputService != null)
             try {
                 outputService.shutdown();
-            } catch (MessageException e) {
+            } catch (CommunicationException e) {
                 logger.warn("Unable to properly shut down communication channel");
             }
 
@@ -46,7 +46,7 @@ public class Manager implements InputListener {
             if (outputService != null) {
                 outputService.putMessage(messageDTO);
             }
-        } catch (MessageException e) {
+        } catch (CommunicationException e) {
             logger.error("Unable to post message to the queue", e);
         }
     }

@@ -1,7 +1,7 @@
 package adapters;
 
 import domain.MessageDTO;
-import domain.MessageException;
+import domain.CommunicationException;
 import domain.MessageFormatter;
 import org.apache.log4j.Logger;
 import org.jdom2.Document;
@@ -15,7 +15,7 @@ public class XMLMessageFormatter implements MessageFormatter {
     private Logger logger = Logger.getLogger(XMLMessageFormatter.class);
 
     @Override
-    public String format(MessageDTO messageDTO) throws MessageException {
+    public String format(MessageDTO messageDTO) throws CommunicationException {
         Element rootElement = new Element("Message");
         Document doc = new Document(rootElement);
 
