@@ -1,7 +1,7 @@
 package domain;
 
 /**
- * Service for sending a {@link MessageDTO}
+ * Abstraction of a service for sending a {@link MessageDTO}
  */
 public interface OutputService {
     /**
