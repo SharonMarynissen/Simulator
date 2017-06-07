@@ -6,21 +6,22 @@ import java.time.format.FormatStyle;
 
 /**
  * Entity representing a camera message
+ * Final class: once a message is created it doesn't need to be possible to change the message
  */
 public final class Message{
     private int cameraId;
     private LocalTime timestamp;
-    private LincensePlate licensePlate;
+    private LicensePlate licensePlate;
 
-    public Message(int cameraId, LocalTime timestamp, LincensePlate lincensePlate){
+    public Message(int cameraId, LocalTime timestamp, LicensePlate licensePlate){
         this.cameraId = cameraId;
         this.timestamp = timestamp;
-        this.licensePlate = lincensePlate;
+        this.licensePlate = licensePlate;
     }
 
     public int getCameraId()                { return cameraId; }
     public LocalTime getTimestamp()         { return timestamp; }
-    public LincensePlate getLicensePlate()  { return licensePlate; }
+    public LicensePlate getLicensePlate()  { return licensePlate; }
 
     @Override
     public String toString() {

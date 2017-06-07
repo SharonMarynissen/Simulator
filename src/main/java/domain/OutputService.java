@@ -1,7 +1,7 @@
 package domain;
 
 /**
- * Service for placing a {@link MessageDTO} on to a messaging queue
+ * Service for sending a {@link MessageDTO}
  */
 public interface OutputService {
     void putMessage(MessageDTO messageDTO) throws MessageException;

@@ -3,7 +3,7 @@ package domain;
 import org.apache.log4j.Logger;
 
 /**
- * Mediator of coupling the {@link InputService} and the {@link OutputService}
+ * Mediator of coupling an {@link InputService} and an {@link OutputService}
  */
 public class Manager implements InputListener {
     private InputService inputService;

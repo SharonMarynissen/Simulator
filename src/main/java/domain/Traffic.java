@@ -3,7 +3,7 @@ package domain;
 import java.time.LocalTime;
 
 /**
- * Class responsible for the calculation of the amount of traffic: normal trafic or rush hour.
+ * Class responsible for the calculation of the amount of traffic: normal traffic or rush hour.
  */
 public class Traffic {
     private LocalTime startRushHour = LocalTime.of(16, 00, 00);

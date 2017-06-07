@@ -9,7 +9,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 /**
- * Adapts a filereader to an {@link InputService}
+ * Adapts a file reader to an {@link InputService}
  * Can be used to simulate violations
  */
 public class InputFileReader implements InputService {
@@ -32,7 +32,7 @@ public class InputFileReader implements InputService {
                     String parts[] = line.split(";");
                     int cameraId = Integer.parseInt(parts[0]);
                     LocalTime timestamp = LocalTime.parse(parts[1]);
-                    LincensePlate licensePlate = new LincensePlate(parts[2]);
+                    LicensePlate licensePlate = new LicensePlate(parts[2]);
 
                     listener.onReceive(new Message(cameraId, timestamp, licensePlate));
 

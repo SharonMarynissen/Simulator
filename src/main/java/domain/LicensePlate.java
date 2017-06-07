@@ -5,12 +5,12 @@ import org.apache.log4j.Logger;
 /**
  * Entity representing a license plate in the format: "1number-3letters-3numbers"
  */
-public class LincensePlate {
+public class LicensePlate {
     private String plate;
     private static final String PATTERN = "\\d-[A-Z]{3}-\\d{3}";
-    private Logger logger = Logger.getLogger(LincensePlate.class);
+    private Logger logger = Logger.getLogger(LicensePlate.class);
 
-    public LincensePlate(String plate) {
+    public LicensePlate(String plate) {
         setPlate(plate);
     }
 

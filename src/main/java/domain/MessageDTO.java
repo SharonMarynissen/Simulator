@@ -7,7 +7,7 @@ import java.time.LocalTime;
  */
 public class MessageDTO {
     private int cameraId;
-    private LincensePlate licensePlate;
+    private LicensePlate licensePlate;
     private LocalTime timestamp;
 
 
@@ -21,12 +21,12 @@ public class MessageDTO {
     }
 
     public void setCameraId(int cameraId)                        { this.cameraId = cameraId; }
-    public void setLicensePlate(LincensePlate licensePlate)    { this.licensePlate = licensePlate; }
+    public void setLicensePlate(LicensePlate licensePlate)    { this.licensePlate = licensePlate; }
     public void setTimestamp(LocalTime timestamp)              { this.timestamp = timestamp; }
 
 
     public int getCameraId()                      { return cameraId; }
-    public LincensePlate getLicensePlate()        { return licensePlate; }
+    public LicensePlate getLicensePlate()         { return licensePlate; }
     public LocalTime getTimestamp()               { return timestamp; }
 
 }

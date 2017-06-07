@@ -15,7 +15,7 @@ import java.util.Random;
 public class Generator implements InputService {
     private Random random = new Random();
     private int maxValue = 50;
-    private List<LincensePlate> lincensePlates = getLincensePlates();
+    private List<LicensePlate> licensePlates = getLicensePlates();
     private Logger logger = Logger.getLogger(Generator.class);
     private boolean stop = false;
     private Traffic traffic = new Traffic();
@@ -25,7 +25,7 @@ public class Generator implements InputService {
         do {
             if (listener != null) {
                 try {
-                    listener.onReceive(new Message(random.nextInt(maxValue), LocalTime.now(), lincensePlates.get(random.nextInt(10))));
+                    listener.onReceive(new Message(random.nextInt(maxValue), LocalTime.now(), licensePlates.get(random.nextInt(10))));
                     Thread.sleep(traffic.checkTraffic());
                 } catch (Exception e) {
                     logger.error("Exception during callback to listener", e);
@@ -40,23 +40,27 @@ public class Generator implements InputService {
         stop = true;
     }
 
+    /**
+     * Setting the maxValue of a camera id
+     * @param maxValue representing the maximum camera id to be generated
+     */
     public void setMaxValue(int maxValue) { this.maxValue = maxValue; }
     public void setStartRushHour(LocalTime startRushHour) { traffic.setStartRushHour(startRushHour); }
     public void setStopRushHour(LocalTime stopRushHour) { traffic.setStopRushHour(stopRushHour); }
     public boolean isActive() { return !stop; }
 
-    private List<LincensePlate> getLincensePlates() {
-        List<LincensePlate> plates = new ArrayList<>();
-        plates.add(new LincensePlate("1-AAA-111"));
-        plates.add(new LincensePlate("1-ECG-987"));
-        plates.add(new LincensePlate("5-ABC-897"));
-        plates.add(new LincensePlate("4-DDD-321"));
-        plates.add(new LincensePlate("9-PDE-195"));
-        plates.add(new LincensePlate("8-DIO-927"));
-        plates.add(new LincensePlate("9-CJI-975"));
-        plates.add(new LincensePlate("3-JJJ-365"));
-        plates.add(new LincensePlate("4-PPP-879"));
-        plates.add(new LincensePlate("1-BBB-123"));
+    private List<LicensePlate> getLicensePlates() {
+        List<LicensePlate> plates = new ArrayList<>();
+        plates.add(new LicensePlate("1-AAA-111"));
+        plates.add(new LicensePlate("1-ECG-987"));
+        plates.add(new LicensePlate("5-ABC-897"));
+        plates.add(new LicensePlate("4-DDD-321"));
+        plates.add(new LicensePlate("9-PDE-195"));
+        plates.add(new LicensePlate("8-DIO-927"));
+        plates.add(new LicensePlate("9-CJI-975"));
+        plates.add(new LicensePlate("3-JJJ-365"));
+        plates.add(new LicensePlate("4-PPP-879"));
+        plates.add(new LicensePlate("1-BBB-123"));
 
         return plates;
     }
