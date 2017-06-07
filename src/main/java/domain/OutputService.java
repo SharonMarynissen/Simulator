@@ -9,7 +9,7 @@ public interface OutputService {
      * @param messageDTO needed to be send
      * @throws CommunicationException when something went wrong during sending sending
      */
-    void putMessage(MessageDTO messageDTO) throws CommunicationException;
+    void sendMessage(MessageDTO messageDTO) throws CommunicationException;
 
     /**
      * Closing the connection with the output service

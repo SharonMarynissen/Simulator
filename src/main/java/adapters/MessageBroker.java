@@ -28,7 +28,7 @@ public class MessageBroker implements OutputService {
     }
 
     @Override
-    public void putMessage(MessageDTO messageDTO) throws CommunicationException {
+    public void sendMessage(MessageDTO messageDTO) throws CommunicationException {
         try {
             ConnectionFactory factory = new ConnectionFactory();
             factory.setUri(uri);

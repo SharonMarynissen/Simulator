@@ -44,7 +44,7 @@ public class Manager implements InputListener {
             MessageDTO messageDTO = new MessageDTO(message);
 
             if (outputService != null) {
-                outputService.putMessage(messageDTO);
+                outputService.sendMessage(messageDTO);
             }
         } catch (CommunicationException e) {
             logger.error("Unable to post message to the queue", e);
